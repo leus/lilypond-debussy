@@ -2,34 +2,20 @@
    composer          = "Claude Debussy (1862-1918)"
    title             = "Suite bergamasque - Clair de Lune"
    opus              = ""
-   
+   date		     = "1903"
    mutopiatitle      = "Suite bergamasque - Clair de Lune"
    mutopiacomposer   = "DebussyC"
    mutopiaopus       = ""
    mutopiainstrument = "Piano"
    source            = "Project Gutenberg"
    style             = "Classical"
-   copyright         = "Creative Commons Attribution-ShareAlike 3.0"
+   copyright         = "Public Domain"
    maintainer        = "Leonardo Herrera"
    maintainerEmail   = "leonardo.herrera@gmail.com"
-   maintainerWeb     = "http://leus.epublish.cl/"
-   lastupdated       = "2008/04/14"
-   footer            = "Mutopia-2008/04/14"
-   tagline = \markup { 
-   	\override #'(box-padding . 1.0) 
-   	\override #'(baseline-skip . 2.7) 
-   	\box \center-align { \small 
-		\line { Sheet music from \with-url #"http://www.MutopiaProject.org" 
-   		\line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \tiny .org \hspace #0.5 }  
-   		\hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } 
-   		\line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" 
-   		\line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \tiny .org } 
-   		by \maintainer \hspace #-1.0 . \hspace 
-   		#0.5 Copyright  2006. \hspace #0.5 Reference: \footer } } 
-   		\line { \teeny \line { 
-   			Licensed under the Creative Commons Attribution-ShareAlike 3.0 License, 
-   			for details see: \hspace #-0.5 
-   			\with-url #"http://creativecommons.org/licenses/by-sa/3.0" http://creativecommons.org/licenses/by-sa/3.0 } } } }
+   maintainerWeb     = "http://code.google.com/p/lilypond-debussy"
+   lastupdated       = "2008/12/07"
+   footer            = "Mutopia-2008/12/07"
+   tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } © \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
 \version "2.10.33"
@@ -50,7 +36,8 @@ upper = \relative c'' {
 	\time 9/8
 	\override Staff.NoteCollision #'merge-differently-dotted = ##t
 	
-	\mark \markup { \upright Andante \italic "trÃ©s expressif" }
+	\override Score.RehearsalMark #'Y-offset = #0.1
+	\mark \markup { \upright Andante \italic "très expressif" }
 	
 	<<
 		{ 
@@ -174,7 +161,7 @@ upper = \relative c'' {
 	\tupletDown \times 3/2 { <c bes' c> [ \acciaccatura { \slurUp ees'8 \slurNeutral } <des, bes' des> ] } <bes ges' bes>4. ~
 	
 	% 19
-	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu Ã  peu cresc. et animÃ©" } (  } 
+	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu à peu cresc. et animé" } (  } 
 	\times 3/2 {<aes ees' aes> <c c'>}
 	\times 3/2 {<bes ges' bes> <ges ges'> )}
 	
@@ -225,7 +212,7 @@ upper = \relative c'' {
 	% 25
 	#(set-octavation 1)
        \set Staff.ottavation = #"8"
-	<aes ees' aes>2.\arpeggio-- _\markup { \italic "dÃ­m. molto" } <aes ees' aes>4.\arpeggio--
+	<aes ees' aes>2.\arpeggio-- _\markup { \italic "dim. molto" } <aes ees' aes>4.\arpeggio--
 	
 	% 26
 	<aes des aes'>2.\arpeggio-- 
@@ -300,8 +287,10 @@ upper = \relative c'' {
 \mBreak
 	% 37
 	<<
-		{		
+		{
 		\stemUp \slurUp
+		\override Score.RehearsalMark #'Y-offset = #0.2
+		\mark \markup { "En animant" }
 		cis4 ( gis8 ) 
 		e'4 ( cis 8 ) 
 		gis'4 ( e8 )
@@ -315,8 +304,8 @@ upper = \relative c'' {
 	>>
 	
 	% 38
-	\stemUp
-	e4. ( f2. )
+	\stemUp \slurUp
+	e4. ( fis2. )
 }
 
 lower = \relative c' {
@@ -730,7 +719,6 @@ lower = \relative c' {
 	
 	% 37
 	<<
-	\mark "lala" 
 		{
 			cis16 [ ( e gis b8. )] 
 			e,16 ( gis b cis8. )
@@ -744,24 +732,28 @@ lower = \relative c' {
 	>>
 
 	% 38
-	<<		
+	<<
 		{
-			
+			\slurDown
 			\change Staff = lower \stemUp
 			gis16 (a cis
 			\change Staff = upper \stemDown
 			gis' cis a )
 			
 			\change Staff = lower \stemUp
-			f, (a cis
+			fis, (a cis
 			\change Staff = upper \stemDown
-			f cis' a)
+			fis cis' a)
 			
 			\change Staff = lower \stemUp
 			fis, ( a cis
 			\change Staff = upper \stemDown
-			fis b d)
+			fis cis' a)
 		}
+		\\
+		{
+			gis,4. fis eis
+		}		
 		>>
 
 }
