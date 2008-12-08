@@ -384,9 +384,19 @@ lower = \relative c' {
 	
 	% 13
 	<<
-		{ r8 <f' c'>4 <c' des ees>4. ~ <c des ees>8 r8 r8 }
+		{ 
+			r8 <f' c'>4 
+			\override TieColumn #'tie-configuration =
+				#'((10.0 . 1) (8.0 . 1) (5.0 . -1))
+			<ces' des f>4. ~ 
+			<ces des f>8 
+			r8 r8 
+		}
 		\\
-		{aes,2. ~ aes4.}
+		{
+			aes,2. ~ 
+			aes4.
+		}
 	>>
 	
 	% 14
