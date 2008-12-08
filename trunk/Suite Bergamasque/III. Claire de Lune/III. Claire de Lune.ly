@@ -39,10 +39,12 @@ upper = \relative c'' {
 	\override Score.RehearsalMark #'Y-offset = #0.1
 	\mark \markup { \upright Andante \italic "très expressif" }
 	
+	
 	<<
 		{ 
 			% 1
-			r8 r8 \blanknotes <f aes>8\(  ~ \unblanknotes <f aes>4. <des f>4. ~
+			r8\pp
+			r8 \blanknotes <f aes>8\(  ~ \unblanknotes <f aes>4. <des f>4. ~
 			% 2
 			<des f>8[<c ees>8 <des f>8] <c ees>2. ~
 			% 3
@@ -129,16 +131,23 @@ upper = \relative c'' {
 	
 	% 13
 	<<
-		{ des'8 <des des,>8 \< <ees ees,>8 \times 3/2{<bes bes'>8 \! <aes aes'>8 ~ }  \times 3/2{ <aes aes'>8 <f f'>8 ~ } }
+		{ 
+			des'8 ( <des des,>8 
+			\< <ees ees,>8
+			% tuplets specified individually to avoid grouping
+			\times 3/2{ <bes bes'>8 \! <aes aes'>8 ~ } 
+			\times 3/2{ <aes aes'>8 <f f'>8 ~ }
+			% 14
+			f'8 ees8 f8 
+			\times 3/2{ ees8 f \> ~ }
+			\times 3/2{ f des ) \! }  
+		}
 		\\
-		{r8 aes4 f'2.}
-	>>
-	
-	% 14
-	<<
-		{ f8 ees8 f8 \times 3/2{ees8 f \> ~ } \times 3/2{f des \!}  }
-		\\
-		{r8 <f, bes>4 ~ <f bes>2.}
+		{
+			r8 aes4 f'2.
+			% 14
+			r8 <f, bes>4 ~ <f bes>2. 
+		}
 	>>
 
 \mBreak
@@ -412,7 +421,8 @@ lower = \relative c' {
 	% 15
 	<<
 		{
-			\times 3/2{r8 \clef treble 
+			\times 3/2{r8 \clef treble
+			\slurDown 
 			<f'' ges bes>8_- ~ ( } \mark "tempo rubato" 
 			
 			<f ges bes>8 [
