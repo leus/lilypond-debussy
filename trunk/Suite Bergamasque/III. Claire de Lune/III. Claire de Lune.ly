@@ -156,7 +156,7 @@ upper = \relative c'' {
 	{ \tupletUp \times 3/2{r8\pp <f' bes f'-->8 ~ ( }  <f bes f'>8 [<ees bes' ees-->8  <ees bes' ees-->8] <ees bes' ees-->8 [<des bes' des-->8 <des bes' des-->8] }
 	
 	%16
-	<des bes' des>8--  <c ges' aes bes>-- <c ges' aes bes>-- <c ges' aes bes>-- <c ges' aes bes>-- <des bes' des>8-- <bes ges' bes>4.-- )
+	<des bes' des>8--  <c ges' aes bes>-- <c ges' aes bes>-- \times 3/2 { <c ges' aes bes>--  <des bes' des>8-- } <bes ges' bes>4.-- )
 	
 	% 17
 	\tupletUp \times 3/2 { r8 <f' bes f'>-- ~ } <f bes f'> <ges bes ges'> <f bes f'> <ees bes' ees> <f bes f'> <ees bes' ees>
