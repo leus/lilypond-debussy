@@ -24,6 +24,10 @@ blanknotes = { \override NoteHead  #'transparent = ##t
 	       \override Stem  #'transparent = ##t }
 unblanknotes = { \revert NoteHead #'transparent
 		 \revert Stem #'transparent }
+blankhead = { \override NoteHead  #'transparent = ##t
+	       }
+unblankhead = { \revert NoteHead #'transparent
+		  }
 
 mBreak = { \break } 
 
@@ -243,10 +247,23 @@ upper = \relative c'' {
 \mBreak
 
 	% 29
-	<f des'>4 \< ( <aes ees'>8 <des f>4. <des f,>4 <des f>8 \!
+	<f des'>4 \< ( <aes ees'>8 <des f>4. <des f,>4 <des f>8 \! )
 	
 	% 30
-	<ees g>8 <des f> <des bes> <des bes>4. ) r4.
+	<<
+		{
+			\stemDown
+			\slurUp
+			<ees g>8 ( <des f> <des bes> \stemUp <des bes>4. )  r4 r8
+		}
+		\\
+		{
+			s4.
+			\change Staff = lower \stemUp \blankhead ges,8 \unblankhead 
+			\change Staff = upper \stemDown f des
+			des8.  bes
+		}
+	>>
 	
 \mBreak
 
@@ -559,6 +576,7 @@ lower = \relative c' {
 	<<
 		{
 			\stemUp
+			\slurDown
 			des,,16 ( aes' des f \change Staff = upper \stemDown \relative c' { aes des ) } 
 			\stemUp \change Staff = lower
 			f, ( c' f  \change Staff = upper \stemDown \relative c' { aes c f ) }
@@ -576,6 +594,7 @@ lower = \relative c' {
 	% 28
 	<<
 		{
+			\slurDown
 			\stemUp \change Staff = lower
 			des,16 ( aes' des f \change Staff = upper \stemDown \relative c' { aes des ) } 
 			\stemUp \change Staff = lower
@@ -598,6 +617,8 @@ lower = \relative c' {
 	aes f des aes des aes )
 	
 	% 30
+	\slurDown 
+	\stemDown
 	ees16 ( bes' des g bes ees
 	g ees bes g ees bes 
 	ees, bes' ees g ees bes )
