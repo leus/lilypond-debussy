@@ -18,7 +18,7 @@
    tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } © \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
-\version "2.10.33"
+\version "2.12.2"
 
 blanknotes = { \override NoteHead  #'transparent = ##t
 	       \override Stem  #'transparent = ##t }
@@ -52,12 +52,12 @@ upper = \relative c'' {
 			% 2
 			<des f>8[<c ees>8 <des f>8] <c ees>2. ~
 			% 3
-			<c ees>8 \) <bes des>8 <c ees>8 \stemUp \times 3/2{des8[f] ~ } \times 3/2{f8[des] ~ }
+			<c ees>8 \) <bes des>8 <c ees>8 \stemUp \times 3/2{ des8[f] ~ } \times 3/2{ f8[des] ~ }
 
 \mBreak
 			
 			% 4
-			<bes des>8 <aes c>8 <bes des>8 <aes c>2. ~ 
+			\stemNeutral <bes des>8 <aes c>8 <bes des>8 <aes c>2. ~ 
 		}
 		\\
 		{
@@ -83,7 +83,7 @@ upper = \relative c'' {
 			aes8 [ges aes] ges4. s4.
 
 			% 7
-			\stemDown \slurDown des2. ~ des4. 
+			\slurDown \stemDown  des2. ~ des4. 
 
 \mBreak
 			
@@ -96,10 +96,10 @@ upper = \relative c'' {
 			ges'2. ges4.
 			
 			% 6 
-			ees2. <ees f>4. ~
+			\stemDown ees2. <ees f>4. ~
 			
 			% 7
-			\stemUp f8[f ges] f8[bes f] ees8[f ees] ~ 
+			\stemUp f8[f ges] f8[bes f]  ees8[f ees] ~ 
 
 			% 8
 			ees8 [des ees] des4. <aes c>4. 
@@ -380,7 +380,7 @@ lower = \relative c' {
 		{
 			aes2. ges4.
 
-			% 9 -- cannot have two voices of different duration!
+			% 9 
 			
 			s2. s4.
 		}
