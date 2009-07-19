@@ -48,11 +48,11 @@ upper = \relative c'' {
 		{ 
 			% 1
 			r8\pp
-			r8 \blanknotes <f aes>8\(  ~ \unblanknotes <f aes>4. <des f>4. ~
+			r8 \blanknotes <f aes>8\(  ~ \unblanknotes \stemDown <f aes>4. <des f>4. ~
 			% 2
 			<des f>8[<c ees>8 <des f>8] <c ees>2. ~
 			% 3
-			<c ees>8 \) <bes des>8 <c ees>8 \times 3/2{des8[f] ~ } \times 3/2{f8[des] ~ }
+			<c ees>8 \) <bes des>8 <c ees>8 \stemUp \times 3/2{des8[f] ~ } \times 3/2{f8[des] ~ }
 
 \mBreak
 			
@@ -357,31 +357,43 @@ lower = \relative c' {
 	<ees ges>2. ~ <ees ges>4.
 	
 	% 5
-	<des ees>2. <c ees>4.
-	
+	<<
+		{ ees2. ees4. }
+		\\
+		{ des2. c4. }
+	>>
 	% 6
-	<bes des>2. <a c>4.
-	\clef bass 
-	
+	<<
+		{des2. c4.}
+		\\
+		{bes2. a4. \clef bass}
+	>>
 	% 7
-	<aes bes>2. ~ <ges bes>4.
-	
+	<<
+		{bes2. ~ bes4.}
+		\\
+		{aes2.   ges4.}
+	>>
+
 	% 8
 	<<
 		{
-			<f aes>2. ges4.
+			aes2. ges4.
+
+			% 9 -- cannot have two voices of different duration!
 			
-			% 9
 			s2. s4.
 		}
 		\\
 		{ 
-			s2. \times 3/2 { ees8[aes,] ~ } |
+			\stemDown f2. \times 3/2 { ees8[aes,] ~ } |
 			
 			% 9
-			\stemUp <aes des,>8 
+			
+			\stemUp <aes des,>8 (
 			\change Staff=upper \stemDown <aes' f>8 
 			\change Staff = lower \clef treble \stemUp <f' aes> ~ <f aes>2. 
+			)
 			\clef bass
 		}
 	>>
