@@ -52,12 +52,28 @@ upper = \relative c'' {
 			% 2
 			<des f>8[<c ees>8 <des f>8] <c ees>2. ~
 			% 3
-			<c ees>8 \) <bes des>8 <c ees>8 \stemUp \times 3/2{ des8[f] ~ } \times 3/2{ f8[des] ~ }
+			<c ees>8 \) \( <bes des>8 <c ees>8 \stemUp \times 3/2{ des8[f] ~ } \times 3/2{ f8[des] ~ }
 
 \mBreak
 			
 			% 4
 			\stemNeutral <bes des>8 <aes c>8 <bes des>8 <aes c>2. ~ 
+
+			% 5
+			\stemUp c8 \) \( [bes8 c8] bes8[ees8 bes8] aes8[bes8 aes8] ~ 
+
+			
+			% 6
+			aes8 [ges aes] ges4. s4.
+
+			% 7
+			\tieDown \stemDown  des2. \) ~ des4. 
+
+\mBreak
+			
+			% 8
+			bes2.			
+
 		}
 		\\
 		{
@@ -66,47 +82,21 @@ upper = \relative c'' {
 			% 2
 			s2. s4.
 			% 3
-			s4. bes2. ~ 
+			s4. bes'2. ~ 
 			% 4
-			\blanknotes <bes des>8 \unblanknotes
-		}
-	>>
-	
-	% 5
-	
-	<<
-		
-		{ 
-			c8 [bes8 c8] bes8[ees8 bes8] aes8[bes8 aes8] ~ 
-			
-			% 6
-			aes8 [ges aes] ges4. s4.
-
-			% 7
-			\slurDown \stemDown  des2. ~ des4. 
-
-\mBreak
-			
-			% 8
-			bes2.
-		
-		}
-		\\
-		{
-			ges'2. ges4.
-			
+			%\blanknotes <bes des>8 \unblanknotes
+			s2. s4.
+			% 5
+			ges2. ges4.
 			% 6 
-			\stemDown ees2. <ees f>4. ~
-			
+			\stemUp ees2. <ees f>4. ~
 			% 7
-			\stemUp f8[f ges] f8[bes f]  ees8[f ees] ~ 
-
+			\stemUp \phrasingSlurUp f8 \( [f ges] f8[bes f]  ees8[f ees] ~ 
 			% 8
-			ees8 [des ees] des4. <aes c>4. 
-			
-		} 
+			ees8 [des ees] des4. <aes c>4. \)
+		}
 	>>
-
+	
 	% 9
 	\blanknotes  s8 s8 s8 \unblanknotes <f'' aes>4. <des f>4. ~ 
 	
@@ -294,11 +284,13 @@ upper = \relative c'' {
 		{
 			s4. 
 			ges16 ges, bes f' ges, bes
-			
+
+			% 34
+
 			d ges, bes ees ges, bes
 		}
 	>>
-
+	
 \mBreak
 
 	% 35
@@ -332,6 +324,8 @@ upper = \relative c'' {
 	% 38
 	\stemUp \slurUp
 	e4. ( fis2. )
+	
+	
 }
 
 lower = \relative c' {
