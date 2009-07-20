@@ -29,7 +29,7 @@ blankhead = { \override NoteHead  #'transparent = ##t
 unblankhead = { \revert NoteHead #'transparent
 		  }
 
-mBreak = { \break } 
+mBreak = { \break }
 
 stemExtend = \once \override Stem #'length = #22
 noFlag = \once \override Stem #'flag-style = #'no-flag
@@ -39,15 +39,15 @@ upper = \relative c'' {
 	\key des \major
 	\time 9/8
 	\override Staff.NoteCollision #'merge-differently-dotted = ##t
-	
+
 	\override Score.RehearsalMark #'Y-offset = #0.1
 	\mark \markup { \upright Andante \italic "très expressif" }
-	
-	
+
+
 	<<
-		{ 
+		{
 			% 1
-			r8\pp
+			r8 \pp
 			r8 \blanknotes <f aes>8\(  ~ \unblanknotes \stemDown <f aes>4. <des f>4. ~
 			% 2
 			<des f>8[<c ees>8 <des f>8] <c ees>2. ~
@@ -55,24 +55,23 @@ upper = \relative c'' {
 			<c ees>8 \) \( <bes des>8 <c ees>8 \stemUp \times 3/2{ des8[f] ~ } \times 3/2{ f8[des] ~ }
 
 \mBreak
-			
+
 			% 4
-			\stemNeutral <bes des>8 <aes c>8 <bes des>8 <aes c>2. ~ 
+			\stemNeutral <bes des>8 <aes c>8 <bes des>8 <aes c>2. ~
 
 			% 5
-			\stemUp c8 \) \( [bes8 c8] bes8[ees8 bes8] aes8[bes8 aes8] ~ 
+			\stemUp c8 \) \( [bes8 c8] bes8[ees8 bes8] aes8[bes8 aes8] ~ \stemNeutral
 
-			
 			% 6
 			aes8 [ges aes] ges4. s4.
 
 			% 7
-			\tieDown \stemDown  des2. \) ~ des4. 
+			\tieDown \stemDown  des2. \) ~ des4.
 
 \mBreak
-			
+
 			% 8
-			bes2.			
+			bes2.
 
 		}
 		\\
@@ -82,31 +81,31 @@ upper = \relative c'' {
 			% 2
 			s2. s4.
 			% 3
-			s4. bes'2. ~ 
+			s4. bes'2. ~
 			% 4
 			%\blanknotes <bes des>8 \unblanknotes
 			s2. s4.
 			% 5
 			ges2. ges4.
-			% 6 
+			% 6
 			\stemUp ees2. <ees f>4. ~
 			% 7
-			\stemUp \phrasingSlurUp f8 \( [f ges] f8[bes f]  ees8[f ees] ~ 
+			\stemUp \phrasingSlurUp f8 \( [f ges] f8[bes f]  ees8[f ees] ~
 			% 8
 			ees8 [des ees] des4. <aes c>4. \)
 		}
 	>>
-	
+
 	% 9
-	\blanknotes  s8 s8 s8 \unblanknotes <f'' aes>4. <des f>4. ~ 
-	
+	\blanknotes  s8 s8 s8 \unblanknotes <f'' aes>4. <des f>4. ~
+
 	% 10
 	<<
 		{<des f>8 ees f ees2. ~}
 		\\
 		{r8 <ges, bes>4 ~ <ges bes>2. }
 	>>
-	
+
 	% 11
 	<<
 		{ ees'8 <des des,> <ees ees,> <aes, des aes'>4. <f des' f>4. ~ }
@@ -122,25 +121,25 @@ upper = \relative c'' {
 		\\
 		{r8 <ges, bes>4 ~ <ges bes>2. }
 	>>
-	
+
 	% 13
 	<<
-		{ 
-			des'8 ( <des des,>8 
+		{
+			des'8 ( <des des,>8
 			\< <ees ees,>8
 			% tuplets specified individually to avoid grouping
-			\times 3/2{ <bes bes'>8 \! <aes aes'>8 ~ } 
+			\times 3/2{ <bes bes'>8 \! <aes aes'>8 ~ }
 			\times 3/2{ <aes aes'>8 <f f'>8 ~ }
 			% 14
-			f'8 ees8 f8 
+			f'8 ees8 f8
 			\times 3/2{ ees8 f \> ~ }
-			\times 3/2{ f des ) \! }  
+			\times 3/2{ f des ) \! }
 		}
 		\\
 		{
 			r8 aes4 f'2.
 			% 14
-			r8 <f, bes>4 ~ <f bes>2. 
+			r8 <f, bes>4 ~ <f bes>2.
 		}
 	>>
 
@@ -148,10 +147,10 @@ upper = \relative c'' {
 
 	%15
 	{ \tupletUp \times 3/2{r8\pp <f' bes f'-->8 ~ ( }  <f bes f'>8 [<ees bes' ees-->8  <ees bes' ees-->8] <ees bes' ees-->8 [<des bes' des-->8 <des bes' des-->8] }
-	
+
 	%16
 	<des bes' des>8--  <c ges' aes bes>-- <c ges' aes bes>-- \times 3/2 { <c ges' aes bes>--  <des bes' des>8-- } <bes ges' bes>4.-- )
-	
+
 	% 17
 	\tupletUp \times 3/2 { r8 <f' bes f'>-- ~ } <f bes f'> <ges bes ges'> <f bes f'> <ees bes' ees> <f bes f'> <ees bes' ees>
 
@@ -159,17 +158,17 @@ upper = \relative c'' {
 
 
 	% 18
-	<des bes' des>8 <ees bes' ees> <des bes' des> 
-	
+	<des bes' des>8 <ees bes' ees> <des bes' des>
+
 	\tupletDown \times 3/2 { <c bes' c> [ \acciaccatura { \slurUp ees'8 \slurNeutral } <des, bes' des> ] } <bes ges' bes>4. ~
-	
+
 	% 19
-	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu à peu cresc. et animé" } (  } 
+	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu � peu cresc. et anim�" } (  }
 	\times 3/2 {<aes ees' aes> <c c'>}
 	\times 3/2 {<bes ges' bes> <ges ges'> )}
-	
+
 	% 20
-	r8 ( <ges c ees ges> <ges c ees ges> 
+	r8 ( <ges c ees ges> <ges c ees ges>
 	<ges c ees ges> <ges c ees ges> <aes c ees aes> <ges c ees ges>4. )
 
 \mBreak
@@ -181,25 +180,25 @@ upper = \relative c'' {
 		\\
 		{ \times 3/2 {s8 des'4.} ges }
 	>>
-	
+
 	% 22
 	r8 <ges, bes ees ges>-- (<ges bes ees ges>-- <ges bes ees ges>-- <ges bes ees ges>-- <aes c f aes>-- <ges bes ees ges>4.-- )
-	
+
 	% 23
 	<<
 		{
 			\stemDown
 			\tupletUp
-			\times 3/2{ r8 <bes des>4. } 
+			\times 3/2{ r8 <bes des>4. }
 			<ges' bes>4.
 		}
 		\\
 		{
-			\stemUp 
-			\slurUp 
+			\stemUp
+			\slurUp
 			\tupletUp
 			s8 s16 <ges, ges'>8 ( s16
-			\times 3/2{ <aes aes'>8 <ees' ees'> } 
+			\times 3/2{ <aes aes'>8 <ees' ees'> }
 			\times 3/2{ <des des'> <bes bes'> ) }
 		}
 	>>
@@ -208,20 +207,20 @@ upper = \relative c'' {
 
 
 	% 24
-	r8 <bes ges' bes> ( <bes ges' bes> 
+	r8 <bes ges' bes> ( <bes ges' bes>
 	<bes ges' bes> <bes ges' bes> <c aes' c>
 	<bes ges' bes> <des bes' des> <ees bes' ees> )
-	
+
 	% 25
 	#(set-octavation 1)
        \set Staff.ottavation = #"8"
 	<aes ees' aes>2.\arpeggio-- _\markup { \italic "dim. molto" } <aes ees' aes>4.\arpeggio--
-	
+
 	% 26
-	<aes des aes'>2.\arpeggio-- 
+	<aes des aes'>2.\arpeggio--
 	#(set-octavation 0)
 	<aes, ees' aes>4.\arpeggio
-	
+
 \mBreak
 
 	% 27
@@ -230,7 +229,7 @@ upper = \relative c'' {
 		\\
 		{ s2.\mark \markup { \italic "un poco mosso" }  aes4. }
 	>>
-	
+
 	% 28
 	 <f aes>2. ( <aes ces>4 aes8 )
 
@@ -238,7 +237,7 @@ upper = \relative c'' {
 
 	% 29
 	<f des'>4 \< ( <aes ees'>8 <des f>4. <des f,>4 <des f>8 \! )
-	
+
 	% 30
 	<<
 		{
@@ -249,12 +248,12 @@ upper = \relative c'' {
 		\\
 		{
 			s4.
-			\change Staff = lower \stemUp \blankhead ges,8 \unblankhead 
+			\change Staff = lower \stemUp \blankhead ges,8 \unblankhead
 			\change Staff = upper \stemDown f des
 			des8.  bes
 		}
 	>>
-	
+
 \mBreak
 
 	% 31
@@ -274,15 +273,15 @@ upper = \relative c'' {
 	% 33
 	<<
 		{
-			ges'4. ~ \( \times 3/2 {ges8 f} \times 3/2{d ees} 
-			
+			ges'4. ~ \( \times 3/2 {ges8 f} \times 3/2{d ees}
+
 			% 34
-			
+
 			bes'2. aes4. \)
 		}
 		\\
 		{
-			s4. 
+			s4.
 			ges16 ges, bes f' ges, bes
 
 			% 34
@@ -290,16 +289,16 @@ upper = \relative c'' {
 			d ges, bes ees ges, bes
 		}
 	>>
-	
+
 \mBreak
 
 	% 35
 	\stemUp \phrasingSlurUp
 	\mark \markup{ \italic "cresc." } <f' aes>2. \(   <aes ces>4 \stemUp des8 \)
-	
+
 	% 36
 	<f, aes>2. \( <gis b>4 gis8 \)
-	
+
 	\key e \major
 
 \mBreak
@@ -309,8 +308,8 @@ upper = \relative c'' {
 		\stemUp \slurUp
 		\override Score.RehearsalMark #'Y-offset = #0.2
 		\mark \markup { "En animant" }
-		cis4 ( gis8 ) 
-		e'4 ( cis 8 ) 
+		cis4 ( gis8 )
+		e'4 ( cis 8 )
 		gis'4 ( e8 )
 		}
 		\\
@@ -320,12 +319,12 @@ upper = \relative c'' {
 		gis'8. [ e,16 e' cis ]
 		}
 	>>
-	
+
 	% 38
 	\stemUp \slurUp
 	e4. ( fis2. )
-	
-	
+
+
 }
 
 lower = \relative c' {
@@ -340,16 +339,16 @@ lower = \relative c' {
 		% trick to make legatto...
 		{ r8 \blanknotes <f aes>4 ~ \unblanknotes <f aes>2. }
 	>>
-	
+
 	% 2
 	<ges a>2. ~ <ges a>4.
-	
+
 	% 3
 	<f aes>2. ~ <f aes>4.
-	
+
 	% 4
 	<ees ges>2. ~ <ees ges>4.
-	
+
 	% 5
 	<<
 		{ ees2. ees4. }
@@ -374,65 +373,65 @@ lower = \relative c' {
 		{
 			aes2. ges4.
 
-			% 9 
-			
+			% 9
+
 			s2. s4.
 		}
 		\\
-		{ 
+		{
 			\stemDown f2. \times 3/2 { ees8[aes,] ~ } |
-			
+
 			% 9
-			
+
 			\stemUp <aes des,>8 (
-			\change Staff=upper \stemDown <aes' f>8 
-			\change Staff = lower \clef treble \stemUp <f' aes> ~ <f aes>2. 
+			\change Staff=upper \stemDown <aes' f>8
+			\change Staff = lower \clef treble \stemUp <f' aes> ~ <f aes>2.
 			)
 			\clef bass
 		}
 	>>
 
-	
+
 	% 10
 	<<
 		{ r8 <des, ges bes des>4 ~ <des ges bes des>2. }
 		\\
 		{ <ges, des'>2. ~ <ges des'>4. }
 	>>
-	
+
 	% 11
 	<<
 		{r8 (<f' aes>4 <des' f>4. <aes des>4.) }
 		\\
 		{<des, f,>2. ~ <des f,>4.}
 	>>
-	
+
 	% 12
 	<<
 		{ r8 <des ges bes des>4 ~ <des ges bes des>2.}
 		\\
 		{<ges, des'>2. ~ <ges des'>4.}
 	>>
-	
+
 	% 13
 	<<
-		{ 
-			r8 <f' c'>4 
+		{
+			r8 <f' c'>4
 			\override TieColumn #'tie-configuration =
 				#'((10.0 . 1) (8.0 . 1) (5.0 . -1))
-			<ces' des f>4. ~ 
-			<ces des f>8 
-			r8 r8 
+			<ces' des f>4. ~
+			<ces des f>8
+			r8 r8
 		}
 		\\
 		{
-			aes,2. ~ 
+			aes,2. ~
 			aes4.
 		}
 	>>
-	
+
 	% 14
-	
+
 	<<
 		{r8 ees''4 ~ \times 3/2{ees8 des ~ } des4.}
 		\\
@@ -440,38 +439,38 @@ lower = \relative c' {
 		\\
 		{\tieDown bes,2. ~ bes4.}
 	>>
-	
+
 	% 15
 	<<
 		{
 			\times 3/2{r8 \clef treble
-			\slurDown 
-			<f'' ges bes>8_- ~ ( } \mark "tempo rubato" 
-			
+			\slurDown
+			<f'' ges bes>8_- ~ ( } \mark "tempo rubato"
+
 			<f ges bes>8 [
-			<ees ges bes>8_- 
-			<ees ges bes>8_-] 
-			
+			<ees ges bes>8_-
+			<ees ges bes>8_-]
+
 			<ees ges bes>8_- [
-			<des ges bes>_- 
-			<des ges bes>_-] 
-			
+			<des ges bes>_-
+			<des ges bes>_-]
+
 			% 16
-			<f bes des>8_- 
-			<ees bes' des>_- 
-			<ees bes' des>_- \times 3/2{<ees bes' des>8_- <f bes des>} 
+			<f bes des>8_-
+			<ees bes' des>_-
+			<ees bes' des>_- \times 3/2{<ees bes' des>8_- <f bes des>}
 			<bes, des ges>4. ) \clef bass
 		}
 		\\
 		{
 			<ees,, ees,>2.
-			
+
 			% 16
-			
+
 			s2. s4.
 		}
 	>>
-	
+
 	% 17
 	<<
 		{\times 3/2{r8 \clef treble <f'' ges bes>8 ~} <f ges bes> <ges bes ees> <f ges bes> <ees ges bes> <f ges bes> <ees ges bes> }
@@ -480,17 +479,17 @@ lower = \relative c' {
 		\\
 		{bes'2. s4.}
 	>>
-	
+
 	% 18
 	\relative c' {<des ges bes>8 <ees ges bes> <des ges bes> \times 3/2 {<c ges' bes> <ees ges bes>} <bes ees ges>4. } \clef bass
-	
+
 	% 19
 	<<
 		{
 			\stemDown
 			\slurDown
 			\tupletUp
-			\times 3/2 {r8 ges' ( } 
+			\times 3/2 {r8 ges' ( }
 			\tupletDown
 			\times 3/2 {aes c}
 			\times 3/2 {bes ges )}
@@ -504,10 +503,10 @@ lower = \relative c' {
 			\stemDown <aes,, aes,>2.
 		}
 	>>
-	
+
 	% 20
 	<<
-		{ 
+		{
 			r8 <ges' c ees>8 <ges c ees>
 			<ges c ees> <ges c ees> <aes c ees> <ges c ees>4.
 		}
@@ -516,7 +515,7 @@ lower = \relative c' {
 			<a, a,>2. s4.
 		}
 	>>
-	
+
 	% 21
 	<<
 		{
@@ -531,7 +530,7 @@ lower = \relative c' {
 			\tupletUp \stemDown \slurDown \times 3/2 {r8 ges, ( } \tupletDown \times 3/2{aes des} \times 3/2{bes ges ) }
 		}
 	>>
-	
+
 	% 22
 	<<
 		{r8 <ges bes ees>-- (<ges bes ees>-- <ges bes ees>-- <ges bes ees>-- <aes c f>-- <ges bes ees>4.--) }
@@ -541,28 +540,28 @@ lower = \relative c' {
 
 	% 23
 	<<
-		
+
 		{
 			\stemUp
 			\tupletUp
-			\times 3/2{ r8 <bes des>4. } 
+			\times 3/2{ r8 <bes des>4. }
 			<ges' bes>4.
 		}
 		\\
 		{
-			\stemDown \slurDown \tupletDown 
+			\stemDown \slurDown \tupletDown
 			s8 s16 ges,8 ( s16
-			\times 3/2{ aes8 ees' } 
+			\times 3/2{ aes8 ees' }
 			\times 3/2{ des bes ) }
 		}
 		\\
 		{\stemDown <des, des,>2. s4}
 	>>
-	
+
 	% 24
 	<<
 		{
-			r8 <bes' des ges> ( <bes des ges> 
+			r8 <bes' des ges> ( <bes des ges>
 			<bes des ges> <bes des ges> <c ees aes>
 			<bes des ges> \clef treble <des ges bes> <ees ges bes> )
 		}
@@ -574,7 +573,7 @@ lower = \relative c' {
 
 	% 25
 	<f aes des f>2.\arpeggio-- ( <fes aes bes des fes>4.\arpeggio--
-	
+
 	% 26
 	<ees ges aes des ees>2.\arpeggio-- ) <aes, ees' ges c>4.\arpeggio \clef bass
 
@@ -583,57 +582,57 @@ lower = \relative c' {
 		{
 			\stemUp
 			\slurDown
-			des,,16 ( aes' des f \change Staff = upper \stemDown \relative c' { aes des ) } 
+			des,,16 ( aes' des f \change Staff = upper \stemDown \relative c' { aes des ) }
 			\stemUp \change Staff = lower
 			f, ( c' f  \change Staff = upper \stemDown \relative c' { aes c f ) }
 			\stemUp \change Staff = lower
 			aes, ( fes' aes  \change Staff = upper \stemDown \relative c' { ces fes aes ) }
 
-			
+
 		}
 		\\
 		{
 			\stemDown des,,4. f aes
 		}
 	>>
-	
+
 	% 28
 	<<
 		{
 			\slurDown
 			\stemUp \change Staff = lower
-			des,16 ( aes' des f \change Staff = upper \stemDown \relative c' { aes des ) } 
+			des,16 ( aes' des f \change Staff = upper \stemDown \relative c' { aes des ) }
 			\stemUp \change Staff = lower
 			f, ( c' f  \change Staff = upper \stemDown \relative c' { aes c f ) }
 			\stemUp \change Staff = lower
-			aes, ( fes' aes  \change Staff = upper \stemDown 
+			aes, ( fes' aes  \change Staff = upper \stemDown
 				\relative c' { ces aes' fes ) }
 		}
 		\\
 		{
 			des,,4. f aes
 		}
-	
+
 	>>
-	
-	
+
+
 	% 29
-	des,16 ( aes' des f aes des 
+	des,16 ( aes' des f aes des
 	f aes f des aes f
 	aes f des aes des aes )
-	
+
 	% 30
-	\slurDown 
+	\slurDown
 	\stemDown
 	ees16 ( bes' des g bes ees
-	g ees bes g ees bes 
+	g ees bes g ees bes
 	ees, bes' ees g ees bes )
 
 	% 31
 	<<
 		{
 			\stemUp
-			aes16 ( ees' ges bes \change Staff = upper \stemDown \relative c' { c ges' ) } 
+			aes16 ( ees' ges bes \change Staff = upper \stemDown \relative c' { c ges' ) }
 			\stemUp \change Staff = lower
 			ges, ( des' f  aes \change Staff = upper \stemDown \relative c' { des ges ) }
 			\stemUp \change Staff = lower
@@ -649,7 +648,7 @@ lower = \relative c' {
 	<<
 		{
 			\stemUp
-			aes16 ( ees' ges bes \change Staff = upper \stemDown \relative c' { c ges' ) } 
+			aes16 ( ees' ges bes \change Staff = upper \stemDown \relative c' { c ges' ) }
 			\stemUp \change Staff = lower
 			ges, ( des' f  aes \change Staff = upper \stemDown \relative c' { des ges ) }
 			\stemUp \change Staff = lower
@@ -660,44 +659,44 @@ lower = \relative c' {
 			\stemDown aes,4. ges f
 		}
 	>>
-	
+
 	% 33
-	
+
 	<<
 		{
 			ees16 ( bes' ees ges bes ees )
-			\stemDown \times 3/2{ ges8 ( f } \times 3/2{d ees ) } 
+			\stemDown \times 3/2{ ges8 ( f } \times 3/2{d ees ) }
 			\clef treble
-			
+
 		}
 		\\
 		{
 			ees,,,4. s2.
 		}
-	
+
 	>>
-	
+
 	% 34
 	<<
 		{
 			% 34
 			\stemUp
-			d'''16 ( ges bes 
-			\change Staff = upper \stemDown 
+			d'''16 ( ges bes
+			\change Staff = upper \stemDown
 			bes ges' bes )
-			
+
 			\change Staff = lower \stemUp
 			ees,, ( ges bes
 			\change Staff = upper \stemDown
 			bes ges' bes )
-			
+
 			\change Staff = lower \stemUp
 			c,, ( e aes
 			\change Staff = upper \stemDown
 			c e aes )
-			
+
 			\change Staff = lower \clef bass
-		
+
 		}
 		\\
 		{
@@ -705,12 +704,12 @@ lower = \relative c' {
 			d,,4. ees aes,
 		}
 	>>
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	% 35
 	<<
 		{
@@ -758,16 +757,16 @@ lower = \relative c' {
 		{
 			\stemDown
 			des,,4. f gis
-			
+
 			\clef treble
 			\key e \major
 		}
 	>>
-	
+
 	% 37
 	<<
 		{
-			cis16 [ ( e gis b8. )] 
+			cis16 [ ( e gis b8. )]
 			e,16 ( gis b cis8. )
 			gis16 ( b cis e8. )
 		}
@@ -775,7 +774,7 @@ lower = \relative c' {
 		{
 			b,4. cis e
 		}
-	
+
 	>>
 
 	% 38
@@ -786,12 +785,12 @@ lower = \relative c' {
 			gis16 (a cis
 			\change Staff = upper \stemDown
 			gis' cis a )
-			
+
 			\change Staff = lower \stemUp
 			fis, (a cis
 			\change Staff = upper \stemDown
 			fis cis' a)
-			
+
 			\change Staff = lower \stemUp
 			fis, ( a cis
 			\change Staff = upper \stemDown
@@ -800,7 +799,7 @@ lower = \relative c' {
 		\\
 		{
 			gis,4. fis eis
-		}		
+		}
 		>>
 
 }
@@ -810,7 +809,7 @@ lower = \relative c' {
 		\context Staff = "upper" {
 			% \set PianoStaff.instrumentName = "Piano  "
 			#(set-accidental-style 'piano)
-			
+
 			\upper
 		}
 		\context Staff = "lower" {
