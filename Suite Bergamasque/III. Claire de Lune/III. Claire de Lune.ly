@@ -15,7 +15,7 @@
    maintainerWeb     = "http://code.google.com/p/lilypond-debussy"
    lastupdated       = "2008/12/07"
    footer            = "Mutopia-2008/12/07"
-   tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } © \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
+   tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } Â© \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
 \version "2.12.2"
@@ -41,7 +41,7 @@ upper = \relative c'' {
 	\override Staff.NoteCollision #'merge-differently-dotted = ##t
 
 	\override Score.RehearsalMark #'Y-offset = #0.1
-	\mark \markup { \upright Andante \italic "très expressif" }
+	\mark \markup { \upright Andante \italic "trÃ¨s expressif" }
 
 
 	<<
@@ -163,7 +163,7 @@ upper = \relative c'' {
 	\tupletDown \times 3/2 { <c bes' c> [ \acciaccatura { \slurUp ees'8 \slurNeutral } <des, bes' des> ] } <bes ges' bes>4. ~
 
 	% 19
-	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu � peu cresc. et anim�" } (  }
+	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu à peu cresc. et animé" } (  }
 	\times 3/2 {<aes ees' aes> <c c'>}
 	\times 3/2 {<bes ges' bes> <ges ges'> )}
 
