@@ -18,7 +18,7 @@
    tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } Â© \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
-\version "2.12.2"
+\version "2.10.33"
 
 blanknotes = { \override NoteHead  #'transparent = ##t
 	       \override Stem  #'transparent = ##t }
@@ -41,7 +41,7 @@ upper = \relative c'' {
 	\override Staff.NoteCollision #'merge-differently-dotted = ##t
 
 	\override Score.RehearsalMark #'Y-offset = #0.1
-	\mark \markup { \upright Andante \italic "trÃ¨s expressif" }
+	\mark \markup { \upright Andante \italic "tr�s expressif" }
 
 
 	<<
@@ -163,7 +163,7 @@ upper = \relative c'' {
 	\tupletDown \times 3/2 { <c bes' c> [ \acciaccatura { \slurUp ees'8 \slurNeutral } <des, bes' des> ] } <bes ges' bes>4. ~
 
 	% 19
-	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu à peu cresc. et animé" } (  }
+	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu � peu cresc. et anim�" } (  }
 	\times 3/2 {<aes ees' aes> <c c'>}
 	\times 3/2 {<bes ges' bes> <ges ges'> )}
 
@@ -273,22 +273,16 @@ upper = \relative c'' {
 	% 33
 	<<
 		{
-			ges'4. ~ \( \times 3/2 {ges8 f} \times 3/2{d ees}
-
-			% 34
-
+			ges''4. ~ \( ges8.[ f d ees]
 			bes'2. aes4. \)
+
 		}
 		\\
 		{
-			s4.
-			ges16 ges, bes f' ges, bes
-
-			% 34
-
-			d ges, bes ees ges, bes
+			s4. ges16[ ges, bes] f' [ges, bes]
+			d [ges, bes] ees [ges, bes]
 		}
-	>>
+        >>
 
 \mBreak
 
@@ -665,7 +659,7 @@ lower = \relative c' {
 	<<
 		{
 			ees16 ( bes' ees ges bes ees )
-			\stemDown \times 3/2{ ges8 ( f } \times 3/2{d ees ) }
+			\stemDown ges8. [( f d ees )]
 			\clef treble
 
 		}
