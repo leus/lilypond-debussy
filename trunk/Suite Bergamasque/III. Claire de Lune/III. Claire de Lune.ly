@@ -1,4 +1,4 @@
-\header{
+ï»¿\header{
    composer          = "Claude Debussy (1862-1918)"
    title             = "Suite bergamasque - Clair de Lune"
    opus              = ""
@@ -19,6 +19,9 @@
 }
 
 \version "2.10.33"
+\paper {
+  #(set-paper-size "letter")
+}
 
 blanknotes = { \override NoteHead  #'transparent = ##t
 	       \override Stem  #'transparent = ##t }
@@ -41,7 +44,7 @@ upper = \relative c'' {
 	\override Staff.NoteCollision #'merge-differently-dotted = ##t
 
 	\override Score.RehearsalMark #'Y-offset = #0.1
-	\mark \markup { \upright Andante \italic "très expressif" }
+	\mark \markup { \upright Andante \italic "trÃ©s expressif" }
 
 
 	<<
@@ -163,7 +166,7 @@ upper = \relative c'' {
 	\tupletDown \times 3/2 { <c bes' c> [ \acciaccatura { \slurUp ees'8 \slurNeutral } <des, bes' des> ] } <bes ges' bes>4. ~
 
 	% 19
-	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu à peu cresc. et animé" } (  }
+	\times 3/2 {<bes ges' bes>8 <ges ges'> ^\markup { \italic "peu Ã  peu cresc. et animÃ©" } (  }
 	\times 3/2 {<aes ees' aes> <c c'>}
 	\times 3/2 {<bes ges' bes> <ges ges'> )}
 
@@ -247,10 +250,7 @@ upper = \relative c'' {
 		}
 		\\
 		{
-			s4.
-			\change Staff = lower \stemUp \blankhead ges,8 \unblankhead
-			\change Staff = upper \stemDown f des
-			des8.  bes
+			s4. \change Staff = lower \stemUp \blankhead g,8 \unblankhead \change Staff = upper \stemDown f ( des \times 3/2 { des bes ) } 
 		}
 	>>
 
@@ -273,14 +273,15 @@ upper = \relative c'' {
 	% 33
 	<<
 		{
-			ges''4. ~ \( ges8.[ f d ees]
+			ges''4. ~ \( \times 3/2 { ges8[ f ] } \times 3/2 { d [ ees ] }
+			
+			% 35
 			bes'2. aes4. \)
-
 		}
 		\\
 		{
-			s4. ges16[ ges, bes] f' [ges, bes]
-			d [ges, bes] ees [ges, bes]
+			s4. ges16[ ges, bes f' ges, bes]
+			d [ges, bes ees ges, bes]
 		}
         >>
 
@@ -318,7 +319,8 @@ upper = \relative c'' {
 	\stemUp \slurUp
 	e4. ( fis2. )
 
-
+	% 39
+	fis2. a4 c'8
 }
 
 lower = \relative c' {
@@ -618,9 +620,7 @@ lower = \relative c' {
 	% 30
 	\slurDown
 	\stemDown
-	ees16 ( bes' des g bes ees
-	g ees bes g ees bes
-	ees, bes' ees g ees bes )
+	ees16 ( bes' ees g bes ees 	g ees bes g ees bes  ees, bes' ees g ees bes )
 
 	% 31
 	<<
@@ -794,8 +794,21 @@ lower = \relative c' {
 		{
 			gis,4. fis eis
 		}
-		>>
+	>>
 
+	% 39
+	<<
+		{
+			fis16 a cis \change Staff = upper \stemDown fis' cis a \change Staff = lower \stemUp fis a cis \change Staff = upper \stemDown fis' cis a \change Staff = lower eis a c eis \change Staff = upper \stemDown c'' c,
+		}
+		\\
+		{
+			e,4. dis cis
+		}
+	>>
+
+	
+	
 }
 
 \score {
