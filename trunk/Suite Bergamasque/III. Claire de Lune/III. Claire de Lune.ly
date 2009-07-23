@@ -15,10 +15,10 @@
    maintainerWeb     = "http://code.google.com/p/lilypond-debussy"
    lastupdated       = "2008/12/07"
    footer            = "Mutopia-2008/12/07"
-   tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-align { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } Â© \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
+   tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-column { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } Â© \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
-\version "2.10.33"
+\version "2.12.0"
 \paper {
   #(set-paper-size "letter")
 }
@@ -215,13 +215,13 @@ upper = \relative c'' {
 	<bes ges' bes> <des bes' des> <ees bes' ees> )
 
 	% 25
-	#(set-octavation 1)
+	\ottava #1
        \set Staff.ottavation = #"8"
 	<aes ees' aes>2.\arpeggio-- _\markup { \italic "dim. molto" } <aes ees' aes>4.\arpeggio--
 
 	% 26
 	<aes des aes'>2.\arpeggio--
-	#(set-octavation 0)
+	\ottava #0
 	<aes, ees' aes>4.\arpeggio
 
 \mBreak
@@ -320,7 +320,27 @@ upper = \relative c'' {
 	e4. ( fis2. )
 
 	% 39
-	fis2. a4 c'8
+	fis2. ( a4 cis8 )
+	
+	% 40
+	fis,,2. ( a4 cis8 )
+
+\mBreak
+
+	% 41
+	\stemNeutral
+	\mark \markup { \dynamic "f" }
+	<cis e>8 ( <b dis> <a cis> \times 3/2 { <gis b> <fis a> ~ } <fis a> <e gis> <dis fis> )
+
+	% 42
+	\mark \markup { \italic "dim." }
+	<<
+	{ <cis e> <b dis> <a cis>  <gis b> <fis a> <e gis> ~ <e gis> <dis fis> <cis e> }
+	\\
+	{
+		s2. a4.
+	}
+	>>
 }
 
 lower = \relative c' {
@@ -799,16 +819,41 @@ lower = \relative c' {
 	% 39
 	<<
 		{
-			fis16 a cis \change Staff = upper \stemDown fis' cis a \change Staff = lower \stemUp fis a cis \change Staff = upper \stemDown fis' cis a \change Staff = lower eis a c eis \change Staff = upper \stemDown c'' c,
+			\slurDown fis16 ( a cis \change Staff = upper \stemDown fis cis' a )  
+			\change Staff = lower \stemUp fis, ( a cis \change Staff = upper \stemDown fis cis' a )
+			\change Staff = lower \stemUp e, ( a cis e \change Staff = upper \stemDown cis'' cis, )
 		}
 		\\
 		{
-			e,4. dis cis
+			e,,4. dis cis
+		}
+	>>
+	
+	% 40
+	<<
+		{
+			\slurDown b16 ( d fis \change Staff = upper \stemDown fis cis' a )
+			\change Staff = lower \stemUp a, ( cis e \change Staff = upper \stemDown fis cis' a )
+			\change Staff = lower \stemUp gis, ( cis e  a \change Staff = upper \stemDown e' a )
+		}
+		\\
+		{
+			b,,4. a e
+		}
+	>>
+	
+	<<
+		{
+			\override Staff.NoteCollision
+				#'merge-differently-headed = ##t
+         		fis16 ( cis' e fis a cis e fis e cis a fis ) e (fis e cis a fis)
+		}
+		\\
+		{
+			fis2. ~ fis4.
 		}
 	>>
 
-	
-	
 }
 
 \score {
