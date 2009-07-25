@@ -339,6 +339,8 @@ upper = \relative c'' {
 	\\
 	{
 		s2. a4.
+		
+		\key des \major
 	}
 	>>
 }
@@ -841,19 +843,23 @@ lower = \relative c' {
 			b,,4. a e
 		}
 	>>
-	
+	% 41
 	<<
 		{
 			\override Staff.NoteCollision
 				#'merge-differently-headed = ##t
-         		fis16 ( cis' e fis a cis e fis e cis a fis ) e (fis e cis a fis)
+         		fis16 ( cis' e fis a cis e fis e cis a fis ) e (fis e cis a fis) \clef bass
 		}
 		\\
 		{
 			fis2. ~ fis4.
 		}
 	>>
-
+	% 42
+	\slurNeutral \stemNeutral
+	fis,16 ( cis' e fis a cis e cis a fis e cis ) 
+	fis, ( cis' fis, cis' fis, cis' )
+	\key des \major
 }
 
 \score {
