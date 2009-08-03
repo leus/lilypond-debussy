@@ -859,7 +859,7 @@ lower = \relative c' {
 	>>
 	
 	%42
-	fis,16 ( cis' e fis a cis e cis a fis e cis ) fis, ( cis' fis, cis' fis, cis' )
+	\slurNeutral fis,16 ( cis' e fis a cis e cis a fis e cis ) fis, ( cis' fis, cis' fis, cis' )
 	
 	\key des \major
 }
