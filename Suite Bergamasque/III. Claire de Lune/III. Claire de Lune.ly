@@ -343,6 +343,32 @@ upper = \relative c'' {
 	>>
 	
 	\key des \major
+	%43
+	
+	\mBreak
+	
+	<<
+	{
+		
+		<des ees>2. ( <ees ges>4 <ees ges bes>8 )
+	}
+	\\
+	{
+		ges,4 ( \mark \markup { \bold "Calmato" } aes8 bes4 des8 c4 )
+	}
+	>>
+	
+	% 44
+	<<
+	{
+		<des ees>2. ( <ees ges>4 <ees ges bes>8 )
+	
+	}
+	\\
+	{
+		ges,4 ( aes8 bes4 des8 c4 )
+	}
+	>>
 }
 
 lower = \relative c' {
@@ -862,6 +888,19 @@ lower = \relative c' {
 	\slurNeutral fis,16 ( cis' e fis a cis e cis a fis e cis ) fis, ( cis' fis, cis' fis, cis' )
 	
 	\key des \major
+	\stemDown
+	% 43
+	
+	aes16 ( ees' aes, ees' aes, ees'
+	aes, ees' aes, ees' aes, ees'
+	aes, ees' aes, ees' aes, ees'
+	
+	% 44
+	aes, ees' aes, ees' aes, ees'
+	aes, ees' aes, ees' aes, ees'
+	aes, ees' aes, ees' aes, ees'
+	)
+	
 }
 
 \score {
