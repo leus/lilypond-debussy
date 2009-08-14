@@ -361,14 +361,34 @@ upper = \relative c'' {
 	% 44
 	<<
 	{
-		<des ees>2. ( <ees ges>4 <ees ges bes>8 )
+		<des ees>2. ( <ees ges>4 <ees ges bes>8 ~ )
+		
+		% 45
+		<des ges bes>8 ( <aes' c f> <ges bes ees> <ges bes>4. <ges aes>4. ) 
 	
 	}
 	\\
 	{
 		ges,4 ( aes8 bes4 des8 c4 )
+		
+		% 45
+		
+		s8 s8 s8 s8 des8 bes des bes c ees
+		
 	}
 	>>
+	
+	% 46
+	<<
+	{
+		<des ges bes>8 ( <aes' c f> <ges bes ees> <ges bes>4 <ges aes>4. )
+	} 
+	\\ 
+	{
+		
+		s8 s8 s8 des8 bes des bes c ees
+	}
+	>>	
 }
 
 lower = \relative c' {
@@ -901,6 +921,19 @@ lower = \relative c' {
 	aes, ees' aes, ees' aes, ees'
 	)
 	
+	\mBreak
+
+	%45 
+	
+	aes,16 ( ees aes ees' aes, ees' 
+	aes ees aes ees' aes, ees
+	aes ees aes, ees' aes, ees )
+
+	% 46
+	\once \override Slur #'control-points = #'( ( 0.1992 . -0.1992) ( 10.161 . 6.575) ( 43.835 . 6.176) ( 47.223 . 2.391) )
+	aes16 ( ees aes ees' aes, ees' 
+	aes ees aes ees' aes, ees
+	aes ees aes ees aes ees  )
 }
 
 \score {
