@@ -42,6 +42,7 @@ upper = \relative c'' {
 	\key des \major
 	\time 9/8
 	\override Staff.NoteCollision #'merge-differently-dotted = ##t
+	\override Staff.NoteCollision #'merge-differently-headed = ##t
 
 	\override Score.RehearsalMark #'Y-offset = #0.1
 	\mark \markup { \upright Andante \italic "trés expressif" }
@@ -388,7 +389,30 @@ upper = \relative c'' {
 		
 		s8 s8 s8 des8 bes des bes c ees
 	}
-	>>	
+	>>
+	
+	\mBreak
+	
+	% 47
+	<<
+	{
+		\stemUp ees'2. ( ges4 bes8 )
+	}
+	\\
+	{
+		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees )
+	}
+	>>
+	% 48
+	<<
+	{
+		\stemUp ees'2. ( ges4 bes8 )
+	}
+	\\
+	{
+		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees )
+	}
+	>>
 }
 
 lower = \relative c' {
@@ -893,8 +917,6 @@ lower = \relative c' {
 	\stemNeutral
 	<<
 		{
-			\override Staff.NoteCollision
-				#'merge-differently-headed = ##t
 				\slurDown fis16 cis' ( e fis a cis e fis e cis a fis ) \slurNeutral e (fis e cis a fis)
 				\clef bass
 		}
@@ -934,6 +956,32 @@ lower = \relative c' {
 	aes16 ( ees aes ees' aes, ees' 
 	aes ees aes ees' aes, ees
 	aes ees aes ees aes ees  )
+	
+	% 47
+	<<
+	{
+		\stemDown \slurDown
+		ges4 ( aes8 bes4 des8 c4. )
+	} \\
+	{
+		\stemUp des2. c16 ( ees ges bes \change Staff = upper \stemDown c ees )
+	}
+	>>
+
+	
+	% 48
+	<<
+	{
+		\stemDown \slurDown
+		ges,,4 ( aes8 bes4 des8 c4. )
+	} \\
+	{
+		\stemUp des2. c16 ( ees ges bes \change Staff = upper \stemDown c ees )
+	}
+	>>
+	
+	\clef treble
+	
 }
 
 \score {
