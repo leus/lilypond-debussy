@@ -15,7 +15,7 @@
    maintainerWeb     = "http://code.google.com/p/lilypond-debussy"
    lastupdated       = "2008/12/07"
    footer            = "Mutopia-2008/12/07"
-   tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-column { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } Â© \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
+   tagline           = \markup { \override #'(box-padding . 1.0) \override #'(baseline-skip . 2.7) \box \center-column { \small \line { Sheet music from \with-url #"http://www.MutopiaProject.org" \line { \teeny www. \hspace #-1.0 MutopiaProject \hspace #-1.0 \teeny .org \hspace #0.5 } \char ##x00A9 \hspace #0.5 \italic Free to download, with the \italic freedom to distribute, modify and perform. } \line { \small \line { Typeset using \with-url #"http://www.LilyPond.org" \line { \teeny www. \hspace #-1.0 LilyPond \hspace #-1.0 \teeny .org } by \maintainer \hspace #-1.0 . \hspace #0.5 Reference: \footer } } \line { \teeny \line { This sheet music has been placed in the public domain by the typesetter, for details see: \hspace #-0.5 \with-url #"http://creativecommons.org/licenses/publicdomain" http://creativecommons.org/licenses/publicdomain } } } }
 }
 
 \version "2.12.0"
@@ -382,12 +382,12 @@ upper = \relative c'' {
 	% 46
 	<<
 	{
-		<des ges bes>8 ( <aes' c f> <ges bes ees> <ges bes>4 <ges aes>4. )
+		<des ges bes>8 ( <aes' c f> <ges bes ees> <ges bes>4.  <ges aes>4. )
 	} 
 	\\ 
 	{
 		
-		s8 s8 s8 des8 bes des bes c ees
+		s4 s8 des8 bes des bes c ees 
 	}
 	>>
 	
@@ -400,7 +400,7 @@ upper = \relative c'' {
 	}
 	\\
 	{
-		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees )
+		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees ) 
 	}
 	>>
 	% 48
@@ -410,15 +410,26 @@ upper = \relative c'' {
 	}
 	\\
 	{
-		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees )
+		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees ) 
 	}
 	>>
+	
+	%\mBreak
+	
+	% 49
+	| 
+
+		\stemUp \slurUp \tieUp
+		ees''2. ~ ( ees4. 
+		~ ees des ees )
+
 }
 
 lower = \relative c' {
 	\key des \major
 	\time 9/8
 	\override Staff.NoteCollision #'merge-differently-dotted = ##t
+	\override Staff.NoteCollision #'merge-differently-headed = ##t
 
 	% 1
 	<<
@@ -956,7 +967,7 @@ lower = \relative c' {
 	aes16 ( ees aes ees' aes, ees' 
 	aes ees aes ees' aes, ees
 	aes ees aes ees aes ees  )
-	
+	|
 	% 47
 	<<
 	{
@@ -964,7 +975,7 @@ lower = \relative c' {
 		ges4 ( aes8 bes4 des8 c4. )
 	} \\
 	{
-		\stemUp des2. c16 ( ees ges bes \change Staff = upper \stemDown c ees )
+		\stemUp des2. c16 ( ees ges bes  \change Staff = upper \stemDown c ees )
 	}
 	>>
 
@@ -980,7 +991,34 @@ lower = \relative c' {
 	}
 	>>
 	
-	\clef treble
+	 \clef treble
+	<<
+	{
+		\stemUp ges,16 ( bes des \change Staff = upper \stemDown ees ges bes )
+		\change Staff = lower \stemUp ges, ( bes des \change Staff = upper \stemDown ees ges c )
+		\change Staff = lower \stemUp ges, ( bes des \change Staff = upper \stemDown ees ges bes )
+	}
+	\\
+	{
+		ges,2. ~ ges4.
+	}
+	>>
+	
+	<<
+	{
+		\change Staff = lower \stemUp ges16 ( a des \change Staff = upper \stemDown ees ges b )
+		\change Staff = lower \stemUp ges,  ( a des \change Staff = upper \stemDown ees ges ces )
+		\change Staff = lower \stemUp ges,  ( a des \change Staff = upper \stemDown ees ges aes )
+	}
+	\\
+	{
+		ges,2. ges4.
+	}
+	>>
+	
+	\mBreak
+	
+	% 51
 	
 }
 
