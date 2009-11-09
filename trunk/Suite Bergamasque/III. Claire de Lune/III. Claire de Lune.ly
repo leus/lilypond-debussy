@@ -259,7 +259,7 @@ upper = \relative c'' {
 
 	% 31
 	<<
-		{ bes2.\p ( c4 f8 ) }
+		{ bes'2.\p ( c4 f8 ) }
 		\\
 		{ s2. s4 \< aes,16 f \! }
 	>>
@@ -274,7 +274,7 @@ upper = \relative c'' {
 	% 33
 	<<
 		{
-			ges''4. ~ \( \times 3/2 { ges8[ f ] } \times 3/2 { d [ ees ] }
+			ges'4. ~ \( \times 3/2 { ges8[ f ] } \times 3/2 { d [ ees ] }
 			
 			% 35
 			bes'2. aes4. \)
@@ -400,7 +400,7 @@ upper = \relative c'' {
 	}
 	\\
 	{
-		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees ) 
+		\slurUp ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees ) 
 	}
 	>>
 	% 48
@@ -410,19 +410,31 @@ upper = \relative c'' {
 	}
 	\\
 	{
-		ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees ) 
+		\slurUp ees,16 ees, ( ges bes ges ees ) r ees ( ges bes ges ees ) 
 	}
 	>>
 	
 	%\mBreak
 	
+
 	% 49
-	| 
+	\stemUp \slurUp \tieUp
+	ees''2. ~ ( ees4. 
 
-		\stemUp \slurUp \tieUp
-		ees''2. ~ ( ees4. 
-		~ ees des ees )
+	% 50
+	~ ees des ees )
 
+	%51
+	 r4 \ppp r8 \ottava #1  \stemDown <f aes>4.  \( f4. ~
+	
+	% 52
+	f8 <c ees> <des f> <c ees>2. ~ \)
+	
+	% 53
+	<c ees>8 \( <bes des> <c ees> \times 3/2 {<bes des> <des f>  ~} \times 3/2 {<des f> <bes des>  ~ }
+	
+	% 54
+	<bes des> <aes c> <bes des> <aes c>2. \)
 }
 
 lower = \relative c' {
@@ -991,7 +1003,7 @@ lower = \relative c' {
 	}
 	>>
 	
-	 \clef treble
+	 \clef treble \key des \major 
 	<<
 	{
 		\stemUp ges,16 ( bes des \change Staff = upper \stemDown ees ges bes )
@@ -1008,7 +1020,7 @@ lower = \relative c' {
 	{
 		\change Staff = lower \stemUp ges16 ( a des \change Staff = upper \stemDown ees ges b )
 		\change Staff = lower \stemUp ges,  ( a des \change Staff = upper \stemDown ees ges ces )
-		\change Staff = lower \stemUp ges,  ( a des \change Staff = upper \stemDown ees ges aes )
+		\change Staff = lower \stemUp ges,  ( a des \change Staff = upper \stemDown ees ges a )
 	}
 	\\
 	{
@@ -1017,9 +1029,36 @@ lower = \relative c' {
 	>>
 	
 	\mBreak
-	
+	\slurNeutral
 	% 51
+	<<
+	{
+
+		\stemUp f16  aes c f aes c r4 r8 r4 r8
+		% 52
+		f,,16 ( a c ees f a ) r4 r8
+	}
+	\\
+	{
+		f,2. f4.
+		% 52
+		f2. f4.
+	}
+	>>
 	
+	%53
+	<<
+	{
+		\stemUp f16 (aes bes des f aes ) r4 r8 r4 r8
+		% 54
+		ees,16 (ges aes c ees ges ) r4 r8 r4 r8
+	}
+	\\
+	{
+		f,2. f4.
+		ees2. ees4.
+	}
+	>>
 }
 
 \score {
