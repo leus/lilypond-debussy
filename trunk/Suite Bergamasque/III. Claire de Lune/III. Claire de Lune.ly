@@ -434,7 +434,22 @@ upper = \relative c'' {
 	<c ees>8 \( <bes des> <c ees> \times 3/2 {<bes des> <des f>  ~} \times 3/2 {<des f> <bes des>  ~ }
 	
 	% 54
-	<bes des> <aes c> <bes des> <aes c>2. \)
+	<bes des> <aes c> <bes des> <aes c>2. \) \ottava #0
+	
+	%55
+	<<
+	{
+		r8 <ges bes>8 \( <aes c> bes ees bes aes bes aes \) ~
+		%56
+		aes8 \( <ees ges> <f aes> <ees ges>4. <f a,> \) ~
+	}
+	\\
+	{
+		s4 s8 ges4. f ~
+		%56
+		f8 s4 s8 s4
+	}
+	>>
 }
 
 lower = \relative c' {
@@ -1003,7 +1018,7 @@ lower = \relative c' {
 	}
 	>>
 	
-	 \clef treble \key des \major 
+	 \clef treble 
 	<<
 	{
 		\stemUp ges,16 ( bes des \change Staff = upper \stemDown ees ges bes )
@@ -1056,7 +1071,24 @@ lower = \relative c' {
 	\\
 	{
 		f,2. f4.
+		% 54
 		ees2. ees4.
+	}
+	>>
+	\mBreak
+	% 55
+	<<
+	{
+		des16 ( ees ges bes des ees ) r4 r8  <ees, f aes c>4. \arpeggio--
+		%56
+		\clef bass
+		c,16 ( ges' bes c ees ges ) bes4. <c, ees>
+	}
+	\\
+	{
+		des2. ( c4.)
+		%56
+		c,2. ( f4. )
 	}
 	>>
 }
